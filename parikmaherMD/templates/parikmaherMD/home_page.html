@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load filter %}
+
+{% block content %}
+
+    <div>
+        {% for salon in hairdressing %}
+            <div>
+                <a href="{% url 'hairdressing' salon.id %}">{{ salon.name }}</a>
+                {{ salon.description }}
+                <img src="{{ salon.main_image.url }}" width="240">
+                {{ salon.schedule_for_clients|linebreaks }}
+                {% with salon.schedule_for_calculating|split:"," as tags %}
+                    {% for day in tags %}
+                        {% if local_date in day %}
+                            {% if "Закрыто" in day %}
+                                Закрыто
+                            {% else %}
+                                {% if day|opening:"-" <= local_time|to_str %}
+                                    {% if local_time|to_str <= day|closing:"-" %}
+                                        Открыто
+                                    {% else %}
+                                        Закрыто
+                                    {% endif %}
+                                {% else %}
+                                    Закрыто
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

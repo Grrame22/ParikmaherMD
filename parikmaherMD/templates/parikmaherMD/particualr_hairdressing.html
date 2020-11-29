@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load filter %}
+
+{% block content %}
+<div>
+    <div>
+        {{ hairdressing.name }}
+        {{ hairdressing.description }}
+        <img src="{{ hairdressing.main_image.url }}" width="240">
+        {{ hairdressing.schedule_for_clients|linebreaks }}
+        {% with hairdressing.schedule_for_calculating|split:"," as tags %}
+            {% for day in tags %}
+                {% if local_date in day %}
+                    {% if "Закрыто" in day %}
+                        Закрыто
+                    {% else %}
+                        {% if day|opening:"-" <= local_time|to_str %}
+                            {% if local_time|to_str <= day|closing:"-" %}
+                                Открыто
+                            {% else %}
+                                Закрыто
+                            {% endif %}
+                        {% else %}
+                            Закрыто
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endwith %}
+    </div>
+</div>
+{% endblock content %}

@@ -11,14 +11,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.getenv("SECRET_KEY")
-SECRET_KEY = "u9&cfw*y)8bmmi3akv_cszb2j(=(f2(oh+*jx-pwl8!*qs$ox*"
+SECRET_KEY = os.getenv("SECRET_KEY")
+# SECRET_KEY = "u9&cfw*y)8bmmi3akv_cszb2j(=(f2(oh+*jx-pwl8!*qs$ox*"
 
 DB_NAME = os.environ.get("DB_NAME")
 DB_USER = os.environ.get("DB_USER")
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
 DB_HOST = os.environ.get("DB_HOST")
-# SECRET_KEY = SECRET_KEY
+SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

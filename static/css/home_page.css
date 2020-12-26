@@ -1,0 +1,49 @@
+body {
+    font-family: 'Langar', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    box-shadow: 0 0 10px 0 rgba(62, 49, 49, 0.26);
+    transition: 0.3s;
+    width: 45rem;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 #b81212;
+}
+
+div.card-body img {
+    width: 100%;
+}
+
+div.card-body a {
+    text-decoration: none;
+    color: red;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+div.card-body p.card-text-opened {
+    color: #05b705;
+    font-size: 15px
+}
+
+div.card-body p.card-text-closed {
+    color: red;
+    font-size: 15px
+}
+
+div.card-body p.phone {
+    font-size: small;
+    display: inline-block;
+    margin-left: 20px
+}
+
+div.card-body p.area-address {
+    display: inline-block;
+    margin-left: 20px;
+    color: #858383
+}

@@ -17,7 +17,7 @@ SECRET_KEY = "u9&cfw*y)8bmmi3akv_cszb2j(=(f2(oh+*jx-pwl8!*qs$ox*"
 DEBUG = True
 
 ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live", ".notreddit.live",
-                 "www.notreddit.live", "127.0.0.1"]
+                 "www.notreddit.live", "127.0.0.1", "parikmahermd.herokuapp.com"]
 
 # Application definition
 

@@ -6,7 +6,7 @@ body {
 .card {
     box-shadow: 0 0 10px 0 rgba(62, 49, 49, 0.26);
     transition: 0.3s;
-    width: 50rem;
+    width: 65rem;
     height: auto;
     margin-top: 1rem;
 }
@@ -23,21 +23,21 @@ div.card-body a {
     text-decoration: none;
     color: red;
     margin-left: 1.3rem;
-    font-size: 2.4rem;
+    font-size: 2.7rem;
 }
 
 div.card-body p.card-text-opened {
     color: #05b705;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 div.card-body p.card-text-closed {
     color: red;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 div.card-body p.phone {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: inline-block;
     margin-left: 1.3rem;
 }
@@ -46,11 +46,11 @@ div.card-body p.area-address {
     display: inline-block;
     margin-left: 1.3rem;
     color: #858383;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
 }
 
 .navbar-brand h3 {
-    font-size: 2.5rem;
+    font-size: 5rem;
 }
 
 .dropdown-n {
@@ -58,6 +58,6 @@ div.card-body p.area-address {
 }
 
 .dropdown-n button, a {
-    font-size: 2rem;
+    font-size: 5rem;
 }
 

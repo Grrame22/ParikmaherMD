@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live", ".notreddit.live",
-                 "www.notreddit.live"]
+                 "www.notreddit.live", "127.0.0.1"]
 
 # Application definition
 

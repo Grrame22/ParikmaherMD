@@ -11,15 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = os.getenv("SECRET_KEY")
-
-SECRET_KEY = "u9&cfw*y)8bmmi3akv_cszb2j(=(f2(oh+*jx-pwl8!*qs$ox*"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DB_NAME = os.environ.get("DB_NAME")
 DB_USER = os.environ.get("DB_USER")
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
 DB_HOST = os.environ.get("DB_HOST")
-# SECRET_KEY = SECRET_KEY
+SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -89,10 +87,10 @@ WSGI_APPLICATION = 'Parikmaher.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "parikmahermd_database",
-        'USER': "grrame22",
-        'PASSWORD': "A237589n069801990grrame22",
-        'HOST': "database-1.c5aoebiefh7k.us-east-2.rds.amazonaws.com",
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
         'PORT': '5432',
     }
 }
@@ -139,27 +137,10 @@ STATIC_URL = '/static/'
 MEDIA_URL = "/images/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
-
-# AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-# AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-# AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
-#
-# AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY_ID
-# AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS_KEY
-# AWS_STORAGE_BUCKET_NAME = AWS_STORAGE_BUCKET_NAME
-#
-AWS_ACCESS_KEY_ID = "AKIA4IZ6VPEMH6QQLUQV"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "parikmahermd-bucket"
-
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"

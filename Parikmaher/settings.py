@@ -21,7 +21,7 @@ DB_PASSWORD = os.environ.get("DB_PASSWORD")
 DB_HOST = os.environ.get("DB_HOST")
 # SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live", ".notreddit.live",
                  "www.notreddit.live", "127.0.0.1", "parikmahermd.herokuapp.com"]

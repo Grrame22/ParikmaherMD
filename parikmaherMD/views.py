@@ -35,13 +35,26 @@ class HairdressingAreaView(View):
     def get(self, request, id):
         hairdressing = Hairdressing.objects.filter(area=id)
 
+        week_days = {"Monday": "Пн", "Tuesday": "Вт",
+                     "Wednesday": "Ср", "Thursday": "Чт",
+                     "Friday": "Пт", "Saturday": "Сб",
+                     "Sunday": "Вс"}
+        local_date = calendar.day_name[datetime.today().weekday()]
+        local_time = datetime.today().time()
+
+        for day in week_days.items():
+            if local_date == day[0]:
+                local_date = day[1]
+            continue
+
         area = ""
         areas_dict = {1: "Центр", 2: "Боюканы", 3: "Рышкановка",
                       4: "Чеканы", 5: "Ботаника"}
 
         area += areas_dict[id]
 
-        context = {"hairdressing": hairdressing, "area": area}
+        context = {"hairdressing": hairdressing, "area": area, "local_date": local_date,
+                   "local_time": local_time}
 
         return render(request, "parikmaherMD/hairdressing_area.html", context)
 

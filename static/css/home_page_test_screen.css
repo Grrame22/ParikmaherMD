@@ -32,7 +32,7 @@ div.card-body p.card-text-opened {
 }
 
 div.card-body p.card-text-closed {
-    color: black;
+    color: red;
     font-size: 1.9rem;
 }
 

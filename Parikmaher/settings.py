@@ -15,21 +15,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# ***
 
 SECRET_KEY = os.getenv("SECRET_KEY")
-#
-# DB_NAME = os.getenv("DB_NAME")
-# DB_USER = os.getenv("DB_USER")
-# DB_PASSWORD = os.getenv("DB_PASSWORD")
-# DB_HOST = os.getenv("DB_HOST")
-#
+
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+
 SECRET_KEY = SECRET_KEY
 
-# ***
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live", ".notreddit.live",
                  "www.notreddit.live", "127.0.0.1", "parikmahermd.herokuapp.com"]
@@ -90,10 +87,10 @@ WSGI_APPLICATION = 'Parikmaher.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "demo_1",
-        'USER': "grrame22",
-        'PASSWORD': "P237589l069801990grrame22",
-        'HOST': "database-1.c5aoebiefh7k.us-east-2.rds.amazonaws.com",
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
         'PORT': '5432',
     }
 }

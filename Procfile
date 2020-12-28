@@ -1,1 +1,1 @@
-web: gunicorn Parikmaher.wsgi
+web: gunicorn Parikmaher.wsgi --log-file -

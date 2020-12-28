@@ -22,7 +22,7 @@ DB_PASSWORD = os.environ.get("DB_PASSWORD")
 DB_HOST = os.environ.get("DB_HOST")
 SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["not--reddit.herokuapp.com", "notreddit.live", ".notreddit.live",
                  "www.notreddit.live", "127.0.0.1", "parikmahermd.herokuapp.com"]
@@ -80,26 +80,26 @@ WSGI_APPLICATION = 'Parikmaher.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': '5432',
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': DB_NAME,
-#         'USER': DB_USER,
-#         'PASSWORD': DB_PASSWORD,
-#         'HOST': DB_HOST,
-#         'PORT': '5432',
-#     }
-# }
-#
-# db = dj_database_url.config()
-# DATABASES["default"].update(db)
+db = dj_database_url.config()
+DATABASES["default"].update(db)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

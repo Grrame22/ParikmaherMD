@@ -24,7 +24,7 @@ SECRET_KEY = "u9&cfw*y)8bmmi3akv_cszb2j(=(f2(oh+*jx-pwl8!*qs$ox*"
 # DB_PASSWORD = os.getenv("DB_PASSWORD")
 # DB_HOST = os.getenv("DB_HOST")
 #
-# SECRET_KEY = SECRET_KE Y
+# SECRET_KEY = SECRET_KEY
 
 # ***
 
@@ -86,24 +86,24 @@ WSGI_APPLICATION = 'Parikmaher.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "demo_1",
+        'USER': "grrame22",
+        'PASSWORD': "P237589l069801990grrame22",
+        'HOST': "database-1.c5aoebiefh7k.us-east-2.rds.amazonaws.com",
+        'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': DB_NAME,
-#         'USER': DB_USER,
-#         'PASSWORD': DB_PASSWORD,
-#         'HOST': DB_HOST,
-#         'PORT': '5432',
-#     }
-# }
 
 db = dj_database_url.config()
 DATABASES["default"].update(db)
@@ -157,12 +157,16 @@ STATICFILES_DIRS = [
 # AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 # AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 # AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
-#
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-#
-# AWS_S3_REGION_NAME = "us-east-2"
-# AWS_S3_SIGNATURE_VERSION = "s3v4"
-#
-# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+AWS_ACCESS_KEY_ID = "AKIA4IZ6VPEMBPWWL5V3"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "parikmahermd-bucket"
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+AWS_S3_REGION_NAME = "us-east-2"
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"

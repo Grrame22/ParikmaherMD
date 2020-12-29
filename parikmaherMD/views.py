@@ -22,6 +22,7 @@ class HomePageView(View):
             continue
 
         hairdressing = Hairdressing.objects.all()
+        hairdressing = sorted(hairdressing, key=lambda salon: salon.name)
 
         context = {"hairdressing": hairdressing, "local_date": local_date,
                    "local_time": local_time}

@@ -61,3 +61,14 @@ div.card-body p.area-address {
     font-size: 3rem;
 }
 
+.bottom-footer div {
+    background-color: #f5f4f4;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #dc3444;
+}
+
+.bottom-footer a {
+    text-decoration: none;
+    font-size: 2rem;
+}

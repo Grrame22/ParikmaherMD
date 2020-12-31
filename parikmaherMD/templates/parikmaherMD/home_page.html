@@ -4,17 +4,20 @@
 
 {% block content %}
 
-    <nav class="navbar navbar-light bg-danger fixed-top" style="box-shadow: 0 0 10px 0 rgba(62, 49, 49, 0.26)">
+    <nav class="navbar navbar-expand-lg bg-danger fixed-top" style="box-shadow: 0 0 10px 0 rgba(62, 49, 49, 0.26)">
         <a class="navbar-brand" style="color: white" href="{% url 'home_page' %}">
             <h3>ParikmaherMD</h3>
         </a>
+        <a href="#link1" class="contacts">
+            <h5>О нас/Контакты</h5>
+        </a>
     </nav>
 
-    <div class="dropdown-button" style="text-align: center; margin-top: 90px; margin-bottom: 25px">
+    <div class="dropdown-button" style="text-align: center; margin-top: 90px; margin-bottom: 25px;">
         <div class="dropdown-n open">
             <button class="btn btn-outline-danger btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                    aria-haspopup="true" aria-expanded="false" style="margin-left: 3rem; margin-right: 3rem">
                 Районы
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -27,6 +30,7 @@
             </div>
         </div>
     </div>
+
     {% for salon in hairdressing %}
         <div class="card mx-auto">
             <img src="{{ salon.main_image.url }}" class="card-img-top">
@@ -60,11 +64,12 @@
         </div>
     {% endfor %}
 
+    <br>
     <footer class="bg-light text-center text-lg-start" style="margin-top: 3rem;">
         <div class="bottom-footer">
             <div class="text-center p-4">
                 <div class="footer-about-site">
-                    <div>
+                    <div id="link1">
                         <p class="about-site-name">О сайте:</p>
                         <p class="about-site-description"><span style="color: #dc3444">ParikmaherMD</span> - это сайт,
                             где

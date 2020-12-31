@@ -92,3 +92,12 @@ i {
     font-size: 2rem;
     color: #dc3444;
 }
+
+a.contacts {
+    text-decoration: none;
+    color: white;
+}
+
+a.contacts h5 {
+    font-size: 2rem;
+}

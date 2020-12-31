@@ -61,14 +61,34 @@ div.card-body p.area-address {
     font-size: 3rem;
 }
 
+.footer-about-site div {
+    margin-top: 2.2rem;
+}
+
 .bottom-footer div {
     background-color: #f5f4f4;
     text-decoration: none;
     font-size: 2rem;
     color: #dc3444;
+    text-align: center;
 }
 
 .bottom-footer a {
     text-decoration: none;
     font-size: 2rem;
+}
+
+.about-site-name {
+    font-size: 3rem;
+    color: black;
+}
+
+.about-site-description {
+    font-size: 1.8rem;
+    color: black;
+}
+
+i {
+    font-size: 2rem;
+    color: #dc3444;
 }

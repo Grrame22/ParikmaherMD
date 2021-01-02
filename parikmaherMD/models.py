@@ -14,7 +14,6 @@ class Hairdressing(models.Model):
     main_image = models.ImageField("Фотографии на главную", blank=True)
     adding_mage_1 = models.ImageField("Добавочная фотография", blank=True)
     adding_image_2 = models.ImageField("Добавочная фотография", blank=True)
-    adding_image_3 = models.ImageField("Добавочная фотография", blank=True)
     description = models.TextField("Описание")
     area = models.ForeignKey(Area, on_delete=models.CASCADE, related_name="Район")
     address_location = models.CharField("Адресс", max_length=100, unique=True)

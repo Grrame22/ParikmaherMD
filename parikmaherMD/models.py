@@ -18,7 +18,6 @@ class Hairdressing(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE, related_name="Район")
     address_location = models.CharField("Адресс", max_length=100, unique=True)
     schedule_for_calculating = models.TextField("Расписание(для расчёта)")
-    schedule_for_clients = models.TextField("Расписание(для клиентов)")
     specializations = models.TextField("Специализации")
     price_list = models.TextField("Тарифы")
     sales = models.TextField("Скидки", blank=True)

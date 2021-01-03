@@ -51,3 +51,42 @@ a.contacts {
     height: 100%;
     object-fit: cover
 }
+
+div.hairdressing_name {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.hairdressing_name h2 {
+    font-size: 3rem;
+    margin-right: 2rem;
+}
+
+.hairdressing_name p {
+    font-size: 2rem;
+}
+
+div.hairdressing_location {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.hairdressing_location h4 {
+    margin-right: 2rem;
+    color: #858383;
+    font-size: 2rem;
+}
+
+.hairdressing_location button {
+    font-size: 1.5rem;
+}
+
+.hairdressing_location p {
+    font-size: 1.5rem;
+}

@@ -11,6 +11,8 @@ class Area(models.Model):
 class Hairdressing(models.Model):
     name = models.CharField("Название", max_length=100, unique=True)
     phone = models.CharField("Телефон", max_length=20, unique=True)
+    website = models.URLField("Сайт", max_length=300, blank=True)
+    reviews = models.URLField("Отзывы", max_length=300, blank=True)
     main_image = models.ImageField("Фотографии на главную", blank=True)
     adding_image_1 = models.ImageField("Добавочная фотография", blank=True)
     adding_image_2 = models.ImageField("Добавочная фотография", blank=True)

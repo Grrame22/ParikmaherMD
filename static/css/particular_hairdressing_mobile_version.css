@@ -1,0 +1,69 @@
+body {
+    font-family: 'Langar', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand h3 {
+    font-size: 3.2rem;
+}
+
+.dropdown-n {
+    margin-top: 7.1rem;
+}
+
+.dropdown-n button, a {
+    font-size: 3rem;
+}
+
+.footer-about-site div {
+    margin-top: 2.2rem;
+}
+
+.bottom-footer div {
+    background-color: #f5f4f4;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #dc3444;
+    text-align: center;
+}
+
+.bottom-footer a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.about-site-name {
+    font-size: 3rem;
+    color: black;
+}
+
+.about-site-description {
+    font-size: 1.8rem;
+    color: black;
+}
+
+i {
+    font-size: 2rem;
+    color: #dc3444;
+}
+
+a.contacts {
+    text-decoration: none;
+    color: white;
+}
+
+a.contacts h5 {
+    font-size: 2rem;
+}
+
+.carousel-item {
+    height: 27.5rem;
+    width: 100%;
+    overflow: hidden
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}

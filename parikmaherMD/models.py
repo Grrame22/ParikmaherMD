@@ -26,7 +26,7 @@ class Hairdressing(models.Model):
     thursday = models.CharField("Четверг", max_length=200)
     friday = models.CharField("Пятница", max_length=200)
     saturday = models.CharField("Суббота", max_length=200)
-    sunday = models.TextField("Воскресенье", max_length=200)
+    sunday = models.CharField("Воскресенье", max_length=200)
     specializations = models.TextField("Специализации")
     price_list = models.TextField("Тарифы")
     sales = models.TextField("Скидки", blank=True)

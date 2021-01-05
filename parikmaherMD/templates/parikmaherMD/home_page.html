@@ -36,6 +36,9 @@
             <img src="{{ salon.main_image.url }}" class="card-img-top">
             <div class="card-body">
                 <h3 class="card-title"><a href="{% url 'hairdressing' salon.id %}">{{ salon.name }}</a>
+                </h3>
+                <hr style="margin-top: 1rem; margin-bottom: 1rem">
+                <div class="open-close-section">
                     {% with salon.schedule_for_calculating|split:"," as tags %}
                         {% for day in tags %}
                             {% if local_date in day %}
@@ -55,8 +58,8 @@
                             {% endif %}
                         {% endfor %}
                     {% endwith %}
-                </h3>
-                <p class="btn btn-danger phone">{{ salon.phone }}</p>
+                    <p class="btn btn-danger phone">{{ salon.phone }}</p>
+                </div>
                 <div>
                     <p class="card-text area-address">{{ salon.area }}, {{ salon.address_location }}</p>
                 </div>

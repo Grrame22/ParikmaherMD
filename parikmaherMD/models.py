@@ -27,7 +27,11 @@ class Hairdressing(models.Model):
     friday = models.CharField("Пятница", max_length=200)
     saturday = models.CharField("Суббота", max_length=200)
     sunday = models.CharField("Воскресенье", max_length=200)
-    specializations = models.TextField("Специализации")
+    manicure = models.TextField("Маникюр", blank=True)
+    type_of_salon = models.TextField("Тип салона", blank=True)
+    services_for_hair = models.TextField("Услуги для волос", blank=True)
+    services_for_face_and_body = models.TextField("Услуги для лица и тела", blank=True)
+    services_for_fingernails = models.TextField("Услуги для ногтей", blank=True)
     price_list = models.TextField("Тарифы")
     sales = models.TextField("Скидки", blank=True)
 

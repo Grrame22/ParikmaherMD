@@ -256,7 +256,19 @@
     </div>
     <hr>
 
-
+    {% if hairdressing.manicure %}
+        <div class="manicure">
+            <i class="fas fa-hand-sparkles"></i>
+            <h3>Маникюр</h3>
+        </div>
+        <div class="manicure_services">
+            {% with hairdressing.manicure|split:"," as tags %}
+                {% for services in tags %}
+                    <p style="display: inline-block">{{ services }}</p><i class="fas fa-circle" style="display: inline-block"></i>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
 
     <br>
     <footer class="bg-light text-center text-lg-start" style="margin-top: 3rem;">

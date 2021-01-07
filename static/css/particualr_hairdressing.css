@@ -203,3 +203,44 @@ div.hairdressing_description_first_part {
     font-size: 2rem;
     margin-top: 1rem;
 }
+
+div.manicure {
+    justify-content: left;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.manicure h3 {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+.manicure i {
+    font-size: 3rem;
+    color: #dc3444;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+div.manicure_services {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.manicure_services p {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.manicure_services i {
+    display: inline-block;
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

@@ -256,15 +256,71 @@
     </div>
     <hr>
 
+    <div class="services">
+        <i class="fas fa-hands-helping"></i>
+        <h3>Услуги</h3>
+    </div>
+
     {% if hairdressing.manicure %}
-        <div class="manicure">
-            <i class="fas fa-hand-sparkles"></i>
-            <h3>Маникюр</h3>
+        <div class="services">
+            <button type="button" class="btn btn-info">Маникюр</button>
         </div>
-        <div class="manicure_services">
+        <div class="services_species">
             {% with hairdressing.manicure|split:"," as tags %}
                 {% for services in tags %}
-                    <p style="display: inline-block">{{ services }}</p><i class="fas fa-circle" style="display: inline-block"></i>
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+
+    {% if hairdressing.type_of_salon %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Тип салона</button>
+        </div>
+        <div class="services_species">
+            {% with hairdressing.type_of_salon|split:"," as tags %}
+                {% for services in tags %}
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+
+    {% if hairdressing.services_for_hair %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Услуги для волос</button>
+        </div>
+        <div class="services_species">
+            {% with hairdressing.services_for_hair|split:"," as tags %}
+                {% for services in tags %}
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+
+    {% if hairdressing.services_for_fingernails %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Услуги для ногтей</button>
+        </div>
+        <div class="services_species">
+            {% with hairdressing.services_for_fingernails|split:"," as tags %}
+                {% for services in tags %}
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+
+    {% if hairdressing.services_for_face_and_body %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Услуги для лица и тела</button>
+        </div>
+        <div class="services_species">
+            {% with hairdressing.services_for_face_and_body|split:"," as tags %}
+                {% for services in tags %}
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
                 {% endfor %}
             {% endwith %}
         </div>

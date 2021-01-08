@@ -32,7 +32,6 @@ class Hairdressing(models.Model):
     services_for_hair = models.TextField("Услуги для волос", blank=True)
     services_for_face_and_body = models.TextField("Услуги для лица и тела", blank=True)
     services_for_fingernails = models.TextField("Услуги для ногтей", blank=True)
-    price_list = models.TextField("Тарифы")
     sales = models.TextField("Скидки", blank=True)
 
     def __str__(self):

@@ -1,6 +1,5 @@
 body {
-    font-family: 'Langar', cursive;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Thin', sans-serif;
 }
 
 .navbar-brand h3 {
@@ -280,4 +279,46 @@ div.services_species {
     height: 4.5rem;
     font-size: 2rem;
     margin-top: 1rem;
+}
+
+div.promotion {
+    justify-content: left;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.promotion h3 {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+.promotion i {
+    font-size: 3rem;
+    color: #dc3444;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+div.promotion_description {
+    justify-content: left;
+    display: inline-block;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-style: dotted;
+    border-color: #dc3444;
+}
+
+.promotion_description h4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: #14a3b8;
 }

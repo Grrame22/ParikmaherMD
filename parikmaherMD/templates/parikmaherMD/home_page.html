@@ -67,6 +67,23 @@
         </div>
     {% endfor %}
 
+    <div class="previous_and_next text-center">
+        <div>
+            {% if hairdressing.has_previous %}
+                <a href="?page={{ hairdressing.previous_page_number }}">
+                    <button class="btn btn-info btn-lg">← Предыдущая</button>
+                </a>
+            {% endif %}
+        </div>
+        <div>
+            {% if hairdressing.has_next %}
+                <a href="?page={{ hairdressing.next_page_number }}">
+                    <button class="btn btn-info btn-lg">Следущая →</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
     <br>
     <footer class="bg-light text-center text-lg-start" style="margin-top: 3rem;">
         <div class="bottom-footer">

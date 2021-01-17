@@ -101,3 +101,15 @@ a.contacts {
 a.contacts h5 {
     font-size: 2rem;
 }
+
+div.previous_and_next div {
+    display: inline-block;
+    align-items: center;
+}
+
+.previous_and_next button {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}

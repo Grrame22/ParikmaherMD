@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import View
+from django.core.paginator import Paginator
 from .models import Hairdressing
 from datetime import datetime
 import calendar
@@ -24,6 +25,10 @@ class HomePageView(View):
         hairdressing = Hairdressing.objects.all()
         hairdressing = sorted(hairdressing, key=lambda salon: salon.name)
 
+        paginator = Paginator(hairdressing, 30)
+        page = request.GET.get("page")
+        hairdressing = paginator.get_page(page)
+
         context = {"hairdressing": hairdressing, "local_date": local_date,
                    "local_time": local_time}
 
@@ -35,6 +40,10 @@ class HairdressingAreaView(View):
 
     def get(self, request, id):
         hairdressing = Hairdressing.objects.filter(area=id)
+
+        paginator = Paginator(hairdressing, 30)
+        page = request.GET.get("page")
+        hairdressing = paginator.get_page(page)
 
         week_days = {"Monday": "Пн", "Tuesday": "Вт",
                      "Wednesday": "Ср", "Thursday": "Чт",

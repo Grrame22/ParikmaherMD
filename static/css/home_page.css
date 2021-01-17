@@ -84,3 +84,14 @@ a.contacts {
     color: white;
     margin-left: 2rem;
 }
+
+div.previous_and_next div {
+    display: inline-block;
+    align-items: center;
+}
+
+.previous_and_next button {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}

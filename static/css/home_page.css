@@ -47,6 +47,12 @@ div.card-body p.area-address {
     color: #858383
 }
 
+footer {
+    background: #eaecef;
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .footer-about-site div {
     margin-top: 2rem;
 }

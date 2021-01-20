@@ -2,6 +2,12 @@ body {
     font-family: 'Roboto Thin', sans-serif;
 }
 
+footer {
+    background: #eaecef;
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .footer-about-site div {
     margin-top: 2rem;
 }

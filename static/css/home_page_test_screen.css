@@ -60,6 +60,12 @@ div.card-body p.area-address {
     font-size: 3rem;
 }
 
+footer {
+    background: #eaecef;
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .footer-about-site div {
     margin-top: 2.2rem;
 }

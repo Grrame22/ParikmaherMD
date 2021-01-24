@@ -101,6 +101,7 @@ i {
 a.contacts {
     text-decoration: none;
     color: white;
+    margin-left: auto;
 }
 
 a.contacts h5 {

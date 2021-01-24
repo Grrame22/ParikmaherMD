@@ -8,10 +8,39 @@
         <a class="navbar-brand" style="color: white" href="{% url 'home_page' %}">
             <h3>ParikmaherMD</h3>
         </a>
+        <button class="btn btn-light search" data-toggle="modal" data-target="#searchModalCenter" type="button"
+                style="margin-bottom: 0.5rem;"><i class="fas fa-search"></i></button>
         <a href="#link1" class="contacts">
             <h5>О нас/Контакты</h5>
         </a>
     </nav>
+
+
+    <div class="search-modal">
+        <div class="modal fade" id="searchModalCenter" tabindex="-1" role="dialog"
+             aria-labelledby="searchModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center w-100">Поиск по названию</h2>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <form class="form" action="{% url 'home_page' %}">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Название заведения"
+                                   aria-label="Search" style="font-size: 2rem" name="search">
+                            <button class="btn btn-success" type="submit"
+                                    style="font-size: 2rem; margin-top: 1rem">Поиск
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="dropdown-button" style="text-align: center; margin-top: 90px; margin-bottom: 25px;">
         <div class="dropdown-n open">
@@ -83,32 +112,6 @@
             {% endif %}
         </div>
     </div>
-
-{#    <br>#}
-{#    <footer>#}
-{#        <div class="bottom-footer">#}
-{#            <div class="text-center p-4">#}
-{#                <div class="footer-about-site">#}
-{#                    <div id="link1">#}
-{#                        <p class="about-site-name">О сайте:</p>#}
-{#                        <p class="about-site-description"><span style="color: #dc3444">ParikmaherMD</span> - это сайт,#}
-{#                            где#}
-{#                            вы можете найти практически любую парикмахерску/салон#}
-{#                            красоты города Кишинёва: от контактных данных до расписания конкретной парикмахерской и её#}
-{#                            услуг.</p>#}
-{#                    </div>#}
-{#                    <div>#}
-{#                        <p class="about-site-name">Контакты:</p>#}
-{#                        <p class="about-site-description"><i class="far fa-envelope"></i> grrame22@gmail.com</p>#}
-{#                        <p class="about-site-description"><i class="fas fa-phone-alt"></i> +37369801990</p>#}
-{#                    </div>#}
-{#                    <div>#}
-{#                        © 2020 Copyright: <a class="text-danger" href="https://notreddit.live">Parikmaher.md</a>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </footer>#}
 
     <link rel="stylesheet" href="../../../static/css/home_page.css" media="screen and (min-width: 1001px)">
     <link rel="stylesheet" href="../../../static/css/home_page_test_screen.css" media="screen and (max-width: 1000px)">

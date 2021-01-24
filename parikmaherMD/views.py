@@ -22,7 +22,13 @@ class HomePageView(View):
                 local_date = day[1]
             continue
 
-        hairdressing = Hairdressing.objects.all()
+        search_hairdressing = request.GET.get("search", "")
+
+        if search_hairdressing:
+            hairdressing = Hairdressing.objects.filter(name__icontains=search_hairdressing)
+        else:
+            hairdressing = Hairdressing.objects.all()
+
         hairdressing = sorted(hairdressing, key=lambda salon: salon.name)
 
         paginator = Paginator(hairdressing, 30)
@@ -39,7 +45,12 @@ class HairdressingAreaView(View):
     """Home page with particular hairdressing salons, sorted by the area"""
 
     def get(self, request, id):
-        hairdressing = Hairdressing.objects.filter(area=id)
+        search_hairdressing = request.GET.get("search", "")
+
+        if search_hairdressing:
+            hairdressing = Hairdressing.objects.filter(name__icontains=search_hairdressing)
+        else:
+            hairdressing = Hairdressing.objects.filter(area=id)
 
         paginator = Paginator(hairdressing, 30)
         page = request.GET.get("page")
@@ -85,7 +96,12 @@ class ParticularHairdressingView(View):
                 local_date = day[1]
             continue
 
-        hairdressing = Hairdressing.objects.get(id=id)
+        search_hairdressing = request.GET.get("search", "")
+
+        if search_hairdressing:
+            hairdressing = Hairdressing.objects.filter(name__icontains=search_hairdressing)
+        else:
+            hairdressing = Hairdressing.objects.get(id=id)
 
         context = {"hairdressing": hairdressing, "local_date": local_date,
                    "local_time": local_time}

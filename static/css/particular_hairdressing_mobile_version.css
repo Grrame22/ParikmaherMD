@@ -14,6 +14,10 @@ body {
     font-size: 3rem;
 }
 
+.navbar-brand h3 {
+    font-size: 3.2rem;
+}
+
 footer {
     background: #eaecef;
     text-align: center;
@@ -55,6 +59,7 @@ i {
 a.contacts {
     text-decoration: none;
     color: white;
+    margin-left: auto;
 }
 
 a.contacts h5 {

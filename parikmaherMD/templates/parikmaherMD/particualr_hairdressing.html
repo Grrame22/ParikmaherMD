@@ -391,6 +391,15 @@
         </div>
     {% endif %}
 
+    {% if hairdressing.other %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Другое</button>
+        </div>
+        <div class="hairdressing_description_second_part">
+            <h4>{{ hairdressing.other|linebreaks }}</h4>
+        </div>
+    {% endif %}
+
     {% if hairdressing.sales %}
         <hr>
         <div class="promotion">

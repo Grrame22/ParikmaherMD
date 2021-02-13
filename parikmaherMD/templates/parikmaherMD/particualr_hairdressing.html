@@ -367,10 +367,10 @@
 
     {% if hairdressing.tattooash_and_microblading %}
         <div class="services">
-            <button type="button" class="btn btn-info">Тату и микроблэдинг</button>
+            <button type="button" class="btn btn-info">Татуаж и микроблэдинг</button>
         </div>
         <div class="services_species">
-            {% with hairdressing.tattoo_and_microblading|split:"," as tags %}
+            {% with hairdressing.tattooash_and_microblading|split:"," as tags %}
                 {% for services in tags %}
                     <button type="button" class="btn btn-basic">{{ services }}</button>
                 {% endfor %}

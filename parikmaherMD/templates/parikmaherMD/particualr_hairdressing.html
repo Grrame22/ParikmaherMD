@@ -391,21 +391,8 @@
         </div>
     {% endif %}
 
-    {% if hairdressing.tattoo %}
-        <div class="services">
-            <button type="button" class="btn btn-info">Тату</button>
-        </div>
-        <div class="services_species">
-            {% with hairdressing.tattoo|split:"," as tags %}
-                {% for services in tags %}
-                    <button type="button" class="btn btn-basic">{{ services }}</button>
-                {% endfor %}
-            {% endwith %}
-        </div>
-    {% endif %}
-    <hr>
-
     {% if hairdressing.sales %}
+        <hr>
         <div class="promotion">
             <i class="fas fa-percentage"></i>
             <h3>Акции и скидки</h3>

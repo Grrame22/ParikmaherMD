@@ -66,25 +66,27 @@
                 </h3>
                 <hr style="margin-top: 1rem; margin-bottom: 1rem">
                 <div class="open-close-section">
-                    {% with salon.schedule_for_calculating|split:"," as tags %}
-                        {% for day in tags %}
-                            {% if local_date in day %}
-                                {% if "Закрыто" in day %}
-                                    <p class="card-text-closed float-right">Закрыто</p>
-                                {% else %}
-                                    {% if day|opening:"-" <= local_time|to_str %}
-                                        {% if local_time|to_str <= day|closing:"-" %}
-                                            <p class="card-text-opened float-right">Открыто</p>
+                    {% if salon.schedule_for_calculating %}
+                        {% with salon.schedule_for_calculating|split:"," as tags %}
+                            {% for day in tags %}
+                                {% if local_date in day %}
+                                    {% if "Закрыто" in day %}
+                                        <p class="card-text-closed float-right">Закрыто</p>
+                                    {% else %}
+                                        {% if day|opening:"-" <= local_time|to_str %}
+                                            {% if local_time|to_str <= day|closing:"-" %}
+                                                <p class="card-text-opened float-right">Открыто</p>
+                                            {% else %}
+                                                <p class="card-text-closed float-right">Закрыто</p>
+                                            {% endif %}
                                         {% else %}
                                             <p class="card-text-closed float-right">Закрыто</p>
                                         {% endif %}
-                                    {% else %}
-                                        <p class="card-text-closed float-right">Закрыто</p>
                                     {% endif %}
                                 {% endif %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endwith %}
+                            {% endfor %}
+                        {% endwith %}
+                    {% endif %}
                     <p class="btn btn-danger phone">{{ salon.phone }}</p>
                 </div>
                 <div>

@@ -82,86 +82,127 @@
     </div>
     <div class="hairdressing_location">
         <h4>{{ hairdressing.area }}, {{ hairdressing.address_location }}</h4>
-        {% with hairdressing.schedule_for_calculating|split:"," as tags %}
-            {% for day in tags %}
-                {% if local_date in day %}
-                    {% if "Закрыто" in day %}
+        {% if hairdressing.schedule_for_calculating %}
+            {% with hairdressing.schedule_for_calculating|split:"," as tags %}
+                {% for day in tags %}
+                    {% if local_date in day %}
+                        {% if "Закрыто" in day %}
 
-                        <button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal"
-                                data-target="#exampleModalCenter">
-                            Расписание
-                        </button>
+                            <button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                Расписание
+                            </button>
 
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title text-center w-100">Сейчас: <span style="color: red">Закрыто</span>
-                                        </h2>
-                                        <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body" style="text-align: center">
-                                        <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
-                                        <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
-                                        <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
-                                        <p><strong>Чт</strong> {{ hairdressing.thursday }}</p>
-                                        <p><strong>Пт</strong> {{ hairdressing.friday }}</p>
-                                        <p><strong>Сб</strong> {{ hairdressing.saturday }}</p>
-                                        <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-dark" data-dismiss="modal">
-                                            Закрыть
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    {% else %}
-                        {% if day|opening:"-" <= local_time|to_str %}
-                            {% if local_time|to_str <= day|closing:"-" %}
-
-                                <button type="button" class="btn btn-outline-success btn-lg" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                    Расписание
-                                </button>
-
-                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h2 class="modal-title text-center w-100" id="exampleModalLongTitle">
-                                                    Сейчас: <span
-                                                        style="color: #05b705">Открыто</span></h2>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body" style="text-align: center">
-                                                <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
-                                                <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
-                                                <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
-                                                <p><strong>Чт</strong> {{ hairdressing.thursday }}</p>
-                                                <p><strong>Пт</strong> {{ hairdressing.friday }}</p>
-                                                <p><strong>Сб</strong> {{ hairdressing.saturday }}</p>
-                                                <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-dark" data-dismiss="modal">
-                                                    Закрыть
-                                                </button>
-                                            </div>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title text-center w-100">Сейчас: <span style="color: red">Закрыто</span>
+                                            </h2>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" style="text-align: center">
+                                            <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
+                                            <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
+                                            <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
+                                            <p><strong>Чт</strong> {{ hairdressing.thursday }}</p>
+                                            <p><strong>Пт</strong> {{ hairdressing.friday }}</p>
+                                            <p><strong>Сб</strong> {{ hairdressing.saturday }}</p>
+                                            <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark" data-dismiss="modal">
+                                                Закрыть
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
+                        {% else %}
+                            {% if day|opening:"-" <= local_time|to_str %}
+                                {% if local_time|to_str <= day|closing:"-" %}
+
+                                    <button type="button" class="btn btn-outline-success btn-lg" data-toggle="modal"
+                                            data-target="#exampleModalCenter">
+                                        Расписание
+                                    </button>
+
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h2 class="modal-title text-center w-100"
+                                                        id="exampleModalLongTitle">
+                                                        Сейчас: <span
+                                                            style="color: #05b705">Открыто</span></h2>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body" style="text-align: center">
+                                                    <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
+                                                    <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
+                                                    <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
+                                                    <p><strong>Чт</strong> {{ hairdressing.thursday }}</p>
+                                                    <p><strong>Пт</strong> {{ hairdressing.friday }}</p>
+                                                    <p><strong>Сб</strong> {{ hairdressing.saturday }}</p>
+                                                    <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-dark" data-dismiss="modal">
+                                                        Закрыть
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                {% else %}
+
+                                    <button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal"
+                                            data-target="#exampleModalCenter">
+                                        Расписание
+                                    </button>
+
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h2 class="modal-title text-center w-100">Сейчас: <span
+                                                            style="color: red">Закрыто</span>
+                                                    </h2>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body" style="text-align: center; font-size: 2rem">
+                                                    <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
+                                                    <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
+                                                    <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
+                                                    <p><strong>Чт</strong> {{ hairdressing.thursday }}</p>
+                                                    <p><strong>Пт</strong> {{ hairdressing.friday }}</p>
+                                                    <p><strong>Сб</strong> {{ hairdressing.saturday }}</p>
+                                                    <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-dark" data-dismiss="modal">
+                                                        Закрыть
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                {% endif %}
                             {% else %}
 
                                 <button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal"
@@ -182,7 +223,7 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <div class="modal-body" style="text-align: center; font-size: 2rem">
+                                            <div class="modal-body" style="text-align: center">
                                                 <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
                                                 <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
                                                 <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
@@ -192,8 +233,7 @@
                                                 <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-dark" data-dismiss="modal">
-                                                    Закрыть
+                                                <button type="button" class="btn btn-dark" data-dismiss="modal">Закрыть
                                                 </button>
                                             </div>
                                         </div>
@@ -201,46 +241,11 @@
                                 </div>
 
                             {% endif %}
-                        {% else %}
-
-                            <button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal"
-                                    data-target="#exampleModalCenter">
-                                Расписание
-                            </button>
-
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h2 class="modal-title text-center w-100">Сейчас: <span style="color: red">Закрыто</span>
-                                            </h2>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body" style="text-align: center">
-                                            <p><strong>Пн</strong> {{ hairdressing.monday }}</p>
-                                            <p><strong>Вт</strong> {{ hairdressing.tuesday }}</p>
-                                            <p><strong>Ср</strong> {{ hairdressing.wednesday }}</p>
-                                            <p><strong>Чт</strong> {{ hairdressing.thursday }}</p>
-                                            <p><strong>Пт</strong> {{ hairdressing.friday }}</p>
-                                            <p><strong>Сб</strong> {{ hairdressing.saturday }}</p>
-                                            <p><strong>Вс</strong> {{ hairdressing.sunday }}</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-dark" data-dismiss="modal">Закрыть
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         {% endif %}
                     {% endif %}
-                {% endif %}
-            {% endfor %}
-        {% endwith %}
+                {% endfor %}
+            {% endwith %}
+        {% endif %}
     </div>
 
     <div class="hairdressing_website">
@@ -278,6 +283,17 @@
         <h4>{{ hairdressing.description|linebreaks }}</h4>
     </div>
     <hr>
+
+    {% if hairdressing.work_graphic %}
+        <div class="hairdressing_description_first_part">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>График работы</h3>
+        </div>
+        <div class="hairdressing_description_second_part">
+            <h4>{{ hairdressing.work_graphic|linebreaks }}</h4>
+        </div>
+        <hr>
+    {% endif %}
 
     <div class="services">
         <i class="fas fa-hands-helping"></i>

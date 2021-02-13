@@ -33,7 +33,7 @@ class Hairdressing(models.Model):
     services_for_hair = models.TextField("Услуги для волос", blank=True)
     services_for_face_and_body = models.TextField("Услуги для лица и тела", blank=True)
     services_for_fingernails = models.TextField("Услуги для ногтей", blank=True)
-    tattoo_and_microblading = models.TextField("Тату и микроблэдинг", blank=True)
+    tattooash_and_microblading = models.TextField("Татуаж и микроблэдинг", blank=True)
     eye_contour = models.TextField("Контур глаз", blank=True)
     tattoo = models.TextField("Тату", blank=True)
     sales = models.TextField("Скидки", blank=True)

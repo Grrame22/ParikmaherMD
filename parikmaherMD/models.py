@@ -35,7 +35,7 @@ class Hairdressing(models.Model):
     services_for_fingernails = models.TextField("Услуги для ногтей", blank=True)
     tattooash_and_microblading = models.TextField("Татуаж и микроблэдинг", blank=True)
     eye_contour = models.TextField("Контур глаз", blank=True)
-    tattoo = models.TextField("Тату", blank=True)
+    other = models.TextField("Другое", blank=True)
     sales = models.TextField("Скидки", blank=True)
 
     def __str__(self):

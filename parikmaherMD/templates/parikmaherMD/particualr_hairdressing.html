@@ -352,12 +352,38 @@
         </div>
     {% endif %}
 
-    {% if hairdressing.services_for_face_and_body %}
+    {% if hairdressing.services_for_face %}
         <div class="services">
-            <button type="button" class="btn btn-info">Услуги для лица и тела</button>
+            <button type="button" class="btn btn-info">Услуги для лица</button>
         </div>
         <div class="services_species">
-            {% with hairdressing.services_for_face_and_body|split:"," as tags %}
+            {% with hairdressing.services_for_face|split:"," as tags %}
+                {% for services in tags %}
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+
+    {% if hairdressing.services_for_body %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Услуги для тела</button>
+        </div>
+        <div class="services_species">
+            {% with hairdressing.services_for_body|split:"," as tags %}
+                {% for services in tags %}
+                    <button type="button" class="btn btn-basic">{{ services }}</button>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+
+    {% if hairdressing.services_for_eyebrows %}
+        <div class="services">
+            <button type="button" class="btn btn-info">Услуги для бровей</button>
+        </div>
+        <div class="services_species">
+            {% with hairdressing.services_for_eyebrows|split:"," as tags %}
                 {% for services in tags %}
                     <button type="button" class="btn btn-basic">{{ services }}</button>
                 {% endfor %}

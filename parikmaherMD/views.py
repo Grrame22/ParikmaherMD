@@ -52,6 +52,8 @@ class HairdressingAreaView(View):
         else:
             hairdressing = Hairdressing.objects.filter(area=id)
 
+        hairdressing = sorted(hairdressing, key=lambda salon: salon.name)
+
         paginator = Paginator(hairdressing, 30)
         page = request.GET.get("page")
         hairdressing = paginator.get_page(page)

@@ -72,7 +72,7 @@ class HairdressingAreaView(View):
 
         area = ""
         areas_dict = {1: "Центр", 2: "Боюканы", 3: "Рышкановка",
-                      4: "Чеканы", 5: "Ботаника"}
+                      4: "Чеканы", 5: "Ботаника", 6: "Телецентр"}
 
         area += areas_dict[id]
 
